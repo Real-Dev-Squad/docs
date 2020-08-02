@@ -4,7 +4,7 @@ Purpose of this repo is to help understand how we go around contributing and col
 
 ## Our apps
 
-You can read up on how we work upon our various projects [here](/apps)
+You can read up on how we work upon our various projects [here](/docs/apps)
 
 ## To Do
 - [x] Setup basic repo
