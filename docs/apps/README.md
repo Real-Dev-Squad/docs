@@ -16,8 +16,8 @@ Currently, we have the following apps:
 
 | Name | Repo | Staging | Prod | Note |
 | -----------|------------|----------|------------|------------|
-| www | [Repo]() | [Link](https://www.realdevsquad.com/) | [Link](https://www.realdevsquad.com/) | Currently, Welcome site is deployed as www |
-| Welcome | [Repo]() | [Link](https://welcome.realdevsquad.com/) | [Link](https://welcome.realdevsquad.com/) | |
-| Members | [Repo]() | [Link](https://staging-members-rds.herokuapp.com/) | [Link](https://members.realdevsquad.com/) | |
+| www | [Repo]() | [Link](https://www.realdevsquad.com/) | [Link](https://www.realdevsquad.com/) | Netlify |
+| Welcome | [Repo]() | [Link](https://welcome.realdevsquad.com/) | [Link](https://welcome.realdevsquad.com/) | Netlify |
+| Members | [Repo]() | [Link](https://staging-members-rds.herokuapp.com/) | [Link](https://members.realdevsquad.com/) | SSG (working on SSR) via Cloudflare |
 | Events |  [Repo]() | [Link]() | [Link]() | |
 | Roadmap| [Repo]() | [Link]() | [Link]() | |
