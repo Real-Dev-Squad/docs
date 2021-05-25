@@ -60,3 +60,6 @@ Extra: For a more powerful proxy solution, try out [mitmproxy](https://mitmproxy
 ## Final
 
 🎉 Once you get your development app to run on `https://dev.realdevsquad.com`, you will be able to access the backend APIs without any CORS issues. Happy development!
+
+
+If you want to have a single command that runs the dev server over https, check out [this package.json](https://github.com/Real-Dev-Squad/website-crypto/pull/203/)
