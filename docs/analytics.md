@@ -11,4 +11,4 @@ Tool we'll be using: [Mixpanel](https://mixpanel.com/)
 - PII (Personal Identifiable Information) like first/last name, username, etc
 
 ## How will we track events for a user ?
-- We'll encrypt the user's `userId` (not `username`) and then track the user through that encrypted id
+- We'll hash the user's `userId` (not `username`) and then track the user through that hash
