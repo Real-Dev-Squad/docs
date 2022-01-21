@@ -22,4 +22,4 @@ Currently, we have the following apps:
 | Events |  [Repo]() | [Link]() | [Link]() | |
 | Roadmap| [Repo]() | [Link]() | [Link]() | |
 
-[Learn cloud Firestore from byte sized videos](https://youtube.com/playlist?list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ){:target="_blank"}
+[Learn cloud Firestore from byte sized videos](https://youtube.com/playlist?list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ){:target="\_blank"}
