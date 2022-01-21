@@ -21,3 +21,5 @@ Currently, we have the following apps:
 | Members | [Repo]() | [Link](https://staging-members-rds.herokuapp.com/) | [Link](https://members.realdevsquad.com/) | SSG (working on SSR) via Cloudflare |
 | Events |  [Repo]() | [Link]() | [Link]() | |
 | Roadmap| [Repo]() | [Link]() | [Link]() | |
+
+[Learn cloud Firestore from byte sized videos](https://youtube.com/playlist?list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ)
