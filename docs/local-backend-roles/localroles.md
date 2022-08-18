@@ -17,7 +17,7 @@ Please make sure that you have setup the backend locally. Watch these videos if 
 
 3. So let's try to acces our details by going to http://localhost:3000/users/self. This will give a 401 error, to solve this follow the step below.
 
-4. Copy this URL `https://github.com/login/oauth/authorize?client_id=<your-client-id>` and paste it somewhere, now go to your  `local.js` file and copy the clientId that is present there, and paste it in place of `<your-client-id>` in the URL provided above.
+4. Copy this URL `https://github.com/login/oauth/authorize?client_id=<your-client-id>` and paste it somewhere, now go to your  `local.js` (you can see how we got that clientId <a href='https://www.youtube.com/watch?v=haqPaPRrhPU'>here</a>) file and copy the clientId that is present there, and paste it in place of `<your-client-id>` in the URL provided above.
 
 5. This will redirect you to `http://localhost:3000/healthcheck`, if you go to your firebase console, you will notice that a `doc` has been created with your userId in the `users` collection in your firebase, now try going to http://localhost:3000/users/self. you can see those details.
 
