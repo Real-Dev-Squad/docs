@@ -1,8 +1,9 @@
 # Setting roles in your local backend
 
 Please make sure that you have setup the backend locally. Watch these videos if you have not done that: 
-- <a href="https://www.youtube.com/watch?v=haqPaPRrhPU">Video 1</a>
-- <a href="https://www.youtube.com/watch?v=2Ja5hH2nH1o&feature=youtu.be">Video 2</a>
+- <a href="https://www.youtube.com/watch?v=haqPaPRrhPU">Real Dev Squad Backend Setup Part 1: GitHub OAuth and Downloading Firestore credentials json file</a>
+
+- <a href="https://www.youtube.com/watch?v=2Ja5hH2nH1o&feature=youtu.be">Real Dev Squad Backend Setup Part 2: Firestore</a>
 
 ## Why we need to step up roles in our local backend?
 - There might be a certain feature that you are building which requires admin or super_user role in order to perform a particular action.
