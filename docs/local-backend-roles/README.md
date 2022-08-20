@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Setting roles in your local backend
 
 Please make sure that you have setup the backend locally by running the command `yarn validate-setup`. Watch these videos if you have not done that: 
@@ -30,4 +28,3 @@ Please make sure that you have setup the backend locally by running the command 
 7. Now click on add, and now if you go to http://localhost:3000/users/self, you will be able to see the roles.
 
 8. Now you will be able to perform actions which require admin or super_user roles in your local backend.
->>>>>>> 76b2174 (Update docs/local-backend-roles/localroles.md)
