@@ -7,13 +7,14 @@ routes can be digested at an acceptable rate
 
 - [ ] Rate Limiter Design `[In Progress]`
 - [ ] Role Based Limiting `[In Progress | YET To Add in Design]`
-- [ ] Route Based Limiting `[In Progress | YET To Add in Design]`
+- [x] Route Based Limiting
 - [ ] Identifying Unique IP Behind Proxy
 - [ ] Idenitifying Unique IP Behind Public IP
-- [ ] Use UserId or Username as UID on Possible Routes
+- [ ] Client Identifier Builder
 - [ ] Common Acceptable Rate
 - [ ] Configuration Via Dashboard Site
 
+---------------------------------------------------
 ## Some More Info
 
 - Package used for rate-limiting:
@@ -26,7 +27,7 @@ routes can be digested at an acceptable rate
 - Level of Rate Limting:
   - User
   - IP
-
+----------------------------
 ### Rate Limiter Design
 
 ```mermaid
@@ -40,11 +41,92 @@ flowchart LR
     RLM --- RLRS[Rate Limiting Rules Service]
     RLC --- CIDB[Client Identifier Builder]
     RLC --- RLMS[Rate Limting Memory Store]
+    RLC --- RBRLM[Route Based Rate Limting]
+    RLC --- ROBRLM[Role Based Rate Limting]
     RLRC[Console: Dashboard Site] --> RLRS
     RLRS --- RLRDB[Rate Limiting Rules Store/DB]
     SO[Service Owner] --> RLRC
 ```
 
+### Route Based Limiting
+
+```mermaid
+stateDiagram-v2
+state if_state <<choice>>
+* --> RLM
+RLM: Rate Limting Middlware
+RLM --> GetLimiterForRoute: req.path
+GetLimiterForRoute --> if_state
+if_state --> CommmonRateLimter: !rateLimiterConfigs[route]
+if_state --> RouteSpecificRateLimter: rateLimiterConfigs[route]
+CommmonRateLimter --> GetCommmonRateLimter: Returns the Common Rate Limiter For All Routes
+RouteSpecificRateLimter --> GetRouteSpecificRateLimter: Returns the Route Specific Rate Limiter
+
+```
+
+<details>
+<summary>
+Pesudo code
+</summary>
+
+```js
+const rateLimiter = require('node-rate-limiter-flexible');
+
+// Create a common rate limiter instance with default options
+const commonRateLimiter = new rateLimiter.RateLimiterMemory({
+  points: 100,
+  duration: 60,
+});
+
+// Define rate limiter configurations for specific routes
+const rateLimiterConfigs = {
+  '/route1': {
+    points: 50,
+    duration: 60,
+  },
+  '/route2': {
+    points: 20,
+    duration: 60,
+  },
+  // ...
+};
+
+// Create a map to store rate limiter instances for specific routes
+const routeRateLimiters = new Map();
+
+// Middleware function to apply rate limiting for specific routes
+function specificRateLimiterMiddleware(req, res, next) {
+  const routeRateLimiter = getLimiterForRoute(req.path);
+
+  routeRateLimiter
+    .consume(req.ip)
+    .then(() => {
+      next();
+    })
+    .catch(() => {
+      res.status(429).send('Too many requests');
+    });
+}
+
+// Function to get the rate limiter instance for a specific route
+function getLimiterForRoute(route) {
+  if (rateLimiterConfigs[route]) {
+    if (!routeRateLimiters.has(route)) {
+      routeRateLimiters.set(
+        route,
+        new rateLimiter.RateLimiterMemory(rateLimiterConfigs[route])
+      );
+    }
+    return routeRateLimiters.get(route);
+  } else {
+    return commonRateLimiter;
+  }
+}
+```
+
+</details>
+
+------------------------------------------
 ## Refferences
 
 - [Why, where, and when should we throttle or rate limit?](https://www.youtube.com/watch?v=CW4gVlU0xtU)
