@@ -5,15 +5,14 @@ routes can be digested at an acceptable rate
 
 ## Checklist
 
-- [ ] Rate Limiter Design `[In Progress]`
-- [ ] Role Based Limiting
-      `[In Progress | Yet To Add in Design | Yet to identify acceptable rate]`
+- [x] Rate Limiter Design
+- [ ] Role Based Limiting `[Yet to identify acceptable rate]`
 - [x] Route Based Limiting
-- [ ] Identifying Unique IP Behind Proxy
+- [x] Identifying Unique IP Behind Proxy
 - [ ] Idenitifying Unique IP Behind Public IP
 - [x] Client UID Identifier or Builder
-- [ ] Common Acceptable Rate
-- [ ] Configuration Via Dashboard Site
+- [ ] Common Acceptable Rate `[Yet to research on acceptable rate]`
+- [x] Rate Limiting Rules Configuration Via Dashboard Site
 
 ---
 
@@ -73,7 +72,7 @@ RouteSpecificRateLimter --> GetRouteSpecificRateLimter: Returns the Route Specif
 Pesudo code
 </summary>
 
-```js
+```ts
 const rateLimiter = require('node-rate-limiter-flexible');
 
 // Create a common rate limiter instance with default options
@@ -134,10 +133,20 @@ function getLimiterForRoute(route) {
 
 ### Client Unqiue Identifier or Builder
 
+```mermaid
+flowchart TD
+    Client[Client] -->|Makes a Request| B(Web Service)
+    B -- request --> M(Rate Limiting Middleware)
+    M --> |Get Client UID| C{Client Identifier Builder}
+    C -->|KeyType: IpAddress| D[Returns Client Ip behind proxy-server and public-ip]
+    C -->|KeyType: UserId| E[Returns user-id using middleware]
+    C -->|KeyType: IpAddress && UserId| F[Returns combination of client-ip and user-id]
+```
+
 <details>
 <summary>Pesudo Code</summary>
 
-```js
+```ts
 function getClientUniqueIdentifier(request, type = 'ipaddress') {
   const ipAddress = getClientIp(request);
   const userId = request.userData.id;
@@ -160,6 +169,46 @@ function getClientIp(request) {
     return request.ip;
   }
 }
+```
+
+</details>
+
+<br>
+
+### Rate Limiting Rules Configuration Via Dashboard Site
+
+```mermaid
+flowchart TD
+    SO[Service Owner] -- action: updates rules --> RLRC[Console: Dashboard Site]
+    RLRC -- PATCH /api/update-environment-variables--> BEND[Backend]
+    BEND -- PUT /.../environment --- BHSP[Backend Hoisting Service Provider]
+    BHSP -- updates env-variables --> BHSP
+    RLM[Rate Limiting Middleware] -- returns rate limiting middleware client created using env-variables--> BEND
+    BEND -- informs middleware about env-variables changes --> RLM
+    RLM -- on env-variables changes reconfigure the client--> RLM
+    RLM -- ...more --> RLC[...]
+```
+
+<small>`Alternative:` cache-service or databse to store rate limiting rules
+service instead of environment variables</small>
+
+<br>
+
+##### `Dashboard Site:` Rough Figma Design To Update API Rules
+
+<p align="center">
+<img class="resource_tiles--hubFileTileInnerImage--dxC1c" src="https://s3-alpha.figma.com/hub/file/3112038267/3ed8a87a-4f7b-471f-801c-e17fb2d9afc6-cover.png" loading="lazy" alt="RDS-Dashboard-Site-Rate-Limiting-API-Service" draggable="false" width="280px">
+</p>
+
+<details>
+<summary>Pesudo Code</summary>
+
+```ts
+//TODO: write code for both dashboard and backend
+
+// Dashboard site
+
+// Backend server
 ```
 
 </details>
