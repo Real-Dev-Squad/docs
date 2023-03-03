@@ -197,7 +197,7 @@ service instead of environment variables</small>
 ##### `Dashboard Site:` Rough Figma Design To Update API Rules
 
 <p align="center">
-<img class="resource_tiles--hubFileTileInnerImage--dxC1c" src="https://s3-alpha.figma.com/hub/file/3112038267/3ed8a87a-4f7b-471f-801c-e17fb2d9afc6-cover.png" loading="lazy" alt="RDS-Dashboard-Site-Rate-Limiting-API-Service" draggable="false" width="280px">
+<img class="resource_tiles--hubFileTileInnerImage--dxC1c" src="https://user-images.githubusercontent.com/29247011/222822997-2f02bccd-4a0f-41cf-bbbf-09ed14cd7914.png" loading="lazy" alt="RDS-Dashboard-Site-Rate-Limiting-API-Service" draggable="false" width="280px">
 </p>
 
 <details>
