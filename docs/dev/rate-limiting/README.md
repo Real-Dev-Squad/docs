@@ -15,7 +15,11 @@ routes can be digested at an acceptable rate.
 > overload. This ensures that the system remains stable and responsive to user
 > requests.</p>
 
-<small>\*Pesudo Code</small>
+</details>
+
+<details>
+
+<summary>Pesudo Code</summary>
 
 ```js
 const { RateLimiterMemory } = require('rate-limiter-flexible');
@@ -46,15 +50,13 @@ app.get('/api/data', rateLimit, (req, res) => {
 
 </details>
 
-<br>
-
 ## Checklist
 
 - [x] Rate Limiter Design
 - [ ] Role Based Limiting `[Yet to identify acceptable rate]`
-- [x] Route Based Limiting
+- [x] Route-Based Limiting
 - [x] Identifying Unique IP Behind Proxy
-- [ ] Idenitifying Unique IP Behind Public IP
+- [ ] Identifying Unique IP Behind Public IP `[Yet to add pseudo code]`
 - [x] Client UID Identifier or Builder
 - [ ] Common Acceptable Rate `[Yet to research on acceptable rate]`
 - [x] Rate Limiting Rules Configuration Via Dashboard Site
@@ -65,14 +67,14 @@ app.get('/api/data', rateLimit, (req, res) => {
 
 - Package used for rate-limiting:
   [node-rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible)
-- Level of Rate Limting:
+- Level of Rate Limiting:
   - User
   - IP
-- Here Rate Limiter is internal rate limiter for servicing users requests at an
-  acceptable rate.
-- Here Rate Limiter use case is for user expirence and security, not for
+- Here Rate Limiter is an internal rate limiter for servicing users requests at
+  an acceptable rate.
+- Here Rate Limiter use case is for user experience and security, not for
   reducing operational costs.
-- Here Rate Limiter use case is for single web service instance.
+- Here Rate Limiter use case is for a single web service instance.
 
 ---
 
@@ -128,8 +130,6 @@ flowchart LR
 > available to users.
 
 </details>
-
-<br >
 
 ### Route Based Limiting
 
@@ -249,8 +249,6 @@ function getLimiterForRoute(route) {
 
 </details>
 
-<br>
-
 ### Client Unqiue Identifier or Builder
 
 ```mermaid
@@ -319,8 +317,6 @@ function getClientIp(request) {
 
 </details>
 
-<br>
-
 ### Rate Limiting Rules Configuration Via Dashboard Site
 
 ```mermaid
@@ -366,8 +362,6 @@ service instead of environment variables</small>
 
 </details>
 
-<br>
-
 <details>
 
 <summary> Dashboard Site: Rough Figma Design To Update API Rules </summary>
@@ -376,8 +370,6 @@ service instead of environment variables</small>
 <img class="resource_tiles--hubFileTileInnerImage--dxC1c" src="https://user-images.githubusercontent.com/29247011/222822997-2f02bccd-4a0f-41cf-bbbf-09ed14cd7914.png" loading="lazy" alt="RDS-Dashboard-Site-Rate-Limiting-API-Service" draggable="false" width="280px">
 </p>
 </details>
-
-<br>
 
 <details>
 <summary>Pesudo Code</summary>
@@ -392,11 +384,7 @@ service instead of environment variables</small>
 
 </details>
 
-<br >
-
 ### Role Based Rate Limiting
-
-<br >
 
 ### Common Acceptable Rate
 
@@ -424,9 +412,14 @@ const rateLimiter = new RateLimiterMemory({
 
 ## Contributions
 
-- @prakash
-- @vinayak-g
-- @randhir
+- [@prakashchoudhary07 ](https://github.com/prakashchoudhary07) suggested to add
+  route-based rate limiting
+- [@ivinayakg](https://github.com/ivinayakg) suggested to use environment
+  variables for rate limiter middleware rules
+- [@heyrandhir](https://github.com/heyrandhir) suggested to add role-based rate
+  limiting
+- [@ankushdharkar](https://github.com/ankushdharkar) suggested to use dashboard
+  site for creating and updating rate limiter rules
 
 ## Refferences
 
