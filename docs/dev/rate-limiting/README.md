@@ -82,19 +82,19 @@ app.get('/api/data', rateLimit, (req, res) => {
 
 ```mermaid
 flowchart LR
-    Client[Client] --> ARL{API Rate Limiter} -- success --> Server[API/Web-Server]
-    Server --> ARL
+    Client[Client] --> ARL{API Rate Limiter}
     ARL -- 200 HTTP --> Client
     ARL -- Failure 429 HTTP --> Client
-    ARL <--> RLM(Rate Limiting Middleware)
+    Server[API/Web-Server] <--connected with--> RLM
+    ARL <-- success/failure response --> RLM(Rate Limiting Middleware)
     RLM <-- multiple instance --> RLC[Rate Limting Client]
-    RLM --- RLRS[Rate Limiting Rules Service]
-    RLC --- CIDB[Client Identifier Builder]
-    RLC --- RLMS[Rate Limting Memory Store]
-    RLC --- RBRLM[Route Based Rate Limting]
-    RLC --- ROBRLM[Role Based Rate Limting]
+    RLM <-- Returns API Endpoints Rate Limiting Rules --> RLRS[Rate Limiting Rules Service]
+    RLC ---> CIDB[Client Identifier Builder]
+    RLC ---> RLMS[Rate Limting Memory Store]
+    RLC ---> RBRLM[Route Based Rate Limting]
+    RLC ---> ROBRLM[Role Based Rate Limting]
     RLRC[Console: Dashboard Site] --> RLRS
-    RLRS --- RLRDB[Rate Limiting Rules Store/DB]
+    RLRS ---> RLRDB[Rate Limiting Rules Store/DB]
     SO[Service Owner] --> RLRC
 ```
 
@@ -136,12 +136,12 @@ flowchart LR
 ```mermaid
 stateDiagram-v2
 state if_state <<choice>>
-* --> RLM
+Start --> RLM
 RLM: Rate Limting Middlware
 RLM --> GetLimiterForRoute: req.path
 GetLimiterForRoute --> if_state
-if_state --> CommmonRateLimter: !rateLimiterConfigs[route]
-if_state --> RouteSpecificRateLimter: rateLimiterConfigs[route]
+if_state --> CommmonRateLimter: If !rateLimiterConfigs[route]
+if_state --> RouteSpecificRateLimter: If rateLimiterConfigs[route]
 CommmonRateLimter --> GetCommmonRateLimter: Returns the Common Rate Limiter For All Routes
 RouteSpecificRateLimter --> GetRouteSpecificRateLimter: Returns the Route Specific Rate Limiter
 
@@ -323,11 +323,10 @@ function getClientIp(request) {
 flowchart TD
     SO[Service Owner] -- action: updates rules --> RLRC[Console: Dashboard Site]
     RLRC -- PATCH /api/update-environment-variables--> BEND[Backend]
-    BEND -- PUT /.../environment --- BHSP[Backend Hoisting Service Provider]
-    BHSP -- updates env-variables --> BHSP
+    BEND <-- PUT /.../environment ---> BHSP[Web Service Provider]
     RLM[Rate Limiting Middleware] -- returns rate limiting middleware client created using env-variables--> BEND
     BEND -- informs middleware about env-variables changes --> RLM
-    RLM -- on env-variables changes reconfigure the client--> RLM
+    RLM -- on env-variables changes reconfigure the rate limting middleware client--> BEND
     RLM -- ...more --> RLC[...]
 ```
 
