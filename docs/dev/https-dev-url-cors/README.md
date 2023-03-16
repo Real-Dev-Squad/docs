@@ -51,7 +51,7 @@ We need to setup a **reverse proxy**(highly encourage you to read about it [here
 A possible solution is installing [local-ssl-proxy](https://www.npmjs.com/package/local-ssl-proxy).
 This is a simple solution of running a simple SSL HTTP proxy using a self-signed certificate.(Intended for local development only)
 
-Run `local-ssl-proxy --source 443 --target <your-port e.g 3000>`
+Run `local-ssl-proxy --source 443 --target <your-port e.g 3000> --hostname dev.realdevsquad.com`
 
 Now if you visit https://dev.realdevsquad.com on your browser, expect to get a warning because the certificate is self-signed. But since we set this up on purpose, it's safe to ignore during development.
 
