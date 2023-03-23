@@ -3,7 +3,7 @@
 ## 1. Setup the Backend
 
 - Go to the RDS Backend setup guide [here](https://github.com/Real-Dev-Squad/website-backend/#readme)
-- Replace the `cors` config in `config/default.js` with the following:
+- Add the `cors` config in `config/local.js` file:
 
 ```javascript
  cors: {
