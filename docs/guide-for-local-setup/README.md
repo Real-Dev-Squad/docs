@@ -14,8 +14,6 @@
 ## 2. Setup the Frontend -
 
 - Go to the README of the respective frontend repo.
-- Change all the client_id to **your client id**.
-  - RDS client id: `23c78f66ab7964e5ef97`
 - Change all the API endpoints to `http://<your local api>:<port>/`
   - RDS API endpoint: `https://api.realdevsquad.com/`
   - Default API endpoint[local]: `http://localhost:3000/`
