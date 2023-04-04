@@ -10,11 +10,11 @@ Profile Service is a custom backend set up by everyone in the RDS community. It 
 
 This is a `GET` endpoint that returns a message "Profile Service - Health Verified".
 
-### Request
+- **Request**
 
 GET `/health`
 
-### Response
+- **Response**
 
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -27,16 +27,15 @@ Content-Type: application/json
 
 This is a `GET` endpoint that returns a JSON object in the following format. It is a verified route, you need to verify the token sent in the header when a request is made to this route. It will be verified with the chain code provided when linked to RDS.
 
-### Request
-
+- **Request**
 GET /profile
-Authorization: Bearer <TOKEN>
+Authorization: Bearer <JWT_TOKEN>
 
-### Response
+- **Response**
 
 - Success (HTTP Status 200 OK):
 
-```
+```json
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -61,7 +60,7 @@ Content-Type: application/json
 
     If the token is not provided or is invalid, the response will be:
 
-```
+```json
 HTTP/1.1 401 Unauthorized
 Content-Type: application/json
 
@@ -71,10 +70,9 @@ Content-Type: application/json
 ```
 
 - Internal Server Error (HTTP Status 500 Internal Server Error):
+  - If there is any internal server error, the response will be:
 
-    - If there is any internal server error, the response will be:
-
-    ```
+    ```json
     HTTP/1.1 500 Internal Server Error
     Content-Type: application/json
 
@@ -87,9 +85,9 @@ Content-Type: application/json
 
 This is a `POST` endpoint that returns a hash. The request body will contain a key named `salt`.
 
-### Request
+- **Request**
 
-```
+```json
 POST /verify
 Content-Type: application/json
 
@@ -98,11 +96,11 @@ Content-Type: application/json
 }
 ```
 
-### Response
+- **Response**
 
 - Success (HTTP Status 200 OK):
 
-    ```
+    ```json
     HTTP/1.1 200 OK
     Content-Type: application/json
 
@@ -112,10 +110,9 @@ Content-Type: application/json
     ```
 
 - Internal Server Error (HTTP Status 500 Internal Server Error):
+- If there is an error in generating the hash, the response will be:
 
-    - If there is an error in generating the hash, the response will be:
-
-    ```
+    ```json
     HTTP/1.1 500 Internal Server Error
     Content-Type: application/json
 
