@@ -1,10 +1,10 @@
 # Profile Service API Specifications and Contracts
 
-Profile Service is a custom backend set up by everyone in the RDS community. It includes 3 endpoints:
+Profile Service is a custom backend that needs to be set up and maintained by everyone in the RDS community. It includes the following endpoints:
 
-1. `/health`
-2. `/profile`
-3. `/verify`
+1. [`/health`](#endpoint-health)
+2. [`/profile`](#endpoint-profile)
+3. [`/verify`](#endpoint-verify)
 
 ## Endpoint: /health
 
