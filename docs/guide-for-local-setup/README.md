@@ -35,4 +35,4 @@ Some of the features are only available to the users with specific roles. For ad
 - For Admin, add `admin` with boolean value `true` in the `roles` array.
 - For Member, add `member` with boolean value `true` in the `roles` array.
 
-**Note:** For register your app for OAuth, go to url `http://<app url>/auth/github/login` and authorize the app.
+**Note:** For register your app for OAuth, go to url `http://<app url>/auth/github/callback` and authorize the app.
