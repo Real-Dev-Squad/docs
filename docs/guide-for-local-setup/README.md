@@ -31,8 +31,8 @@
 
 Some of the features are only available to the users with specific roles. For adding roles to the user, you can add the roles to the `roles` map in the database.
 
-- For Super User, add `super_user` with boolean value `true` in the `roles` array.
-- For Admin, add `admin` with boolean value `true` in the `roles` array.
-- For Member, add `member` with boolean value `true` in the `roles` array.
+- For Super User, add `super_user` with boolean value `true` in the `roles` map.
+- For Admin, add `admin` with boolean value `true` in the `roles` map.
+- For Member, add `member` with boolean value `true` in the `roles` map.
 
 **Note:** For register your app for OAuth, go to url `http://<app url>/auth/github/callback` and authorize the app.
