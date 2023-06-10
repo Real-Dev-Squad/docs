@@ -29,7 +29,7 @@
 
 ## 4. Add roles to the user like Super User, Admin, Member
 
-Some of the features are only available to the users with specific roles. For adding roles to the user, you can add the roles to the `roles` array in the database.
+Some of the features are only available to the users with specific roles. For adding roles to the user, you can add the roles to the `roles` map in the database.
 
 - For Super User, add `super_user` with boolean value `true` in the `roles` array.
 - For Admin, add `admin` with boolean value `true` in the `roles` array.
