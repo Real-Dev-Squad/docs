@@ -1,4 +1,4 @@
-# This is a document that describes how to run RDS app locally with local backend
+# This is a document that describes how to run the RDS app locally with a local backend
 
 ## 1. Setup the Backend
 
@@ -17,10 +17,10 @@
 - Change all the API endpoints to `http://<your local api>:<port>/`
   - RDS API endpoint: `https://api.realdevsquad.com/`
   - Default API endpoint[local]: `http://localhost:3000/`
-- Change all the url with respective frontend url
-  - Like you want to run WWW and My site then you have to set `http://localhost:5500` for WWW(main Site) then change all the url from `https://www.realdevsquad.com` to `http://localhost:5500` in both the repo and if you set `http://localhost:3443` for My site then you have to change all the url from `https://my.realdevsquad.com` to `http://localhost:3443` in both the repo and so on.
+- Change all the URL with respective frontend URL
+  - Like you want to run WWW and My site then you have to set `http://localhost:5500` for WWW(main Site) then change all the URL from `https://www.realdevsquad.com` to `http://localhost:5500` in both the repo and if you set `http://localhost:3443` for My site then you have to change all the URL from `https://my.realdevsquad.com` to `http://localhost:3443` in both the repo and so on.
 
-## 3. For skip the signup process
+## 3. To skip the signup process
 
 - After authenticated, add some data to the database
       - `username` - `<your user name>` of the user
@@ -29,10 +29,10 @@
 
 ## 4. Add roles to the user like Super User, Admin, Member
 
-Some of the features are only available to the users with specific roles. For adding roles to the user, you can add the roles to the `roles` map in the database.
+Some of the features are only available to users with specific roles. For adding roles to the user, you can add the roles to the `roles` map in the database.
 
-- For Super User, add `super_user` with boolean value `true` in the `roles` map.
-- For Admin, add `admin` with boolean value `true` in the `roles` map.
-- For Member, add `member` with boolean value `true` in the `roles` map.
+- For Super User, add `super_user` with the boolean value `true` in the `roles` map.
+- For Admin, add `admin` with the boolean value `true` in the `roles` map.
+- For Member, add `member` with the boolean value `true` in the `roles` map.
 
-**Note:** For register your app for OAuth, go to url `http://<app url>/auth/github/callback` and authorize the app.
+**Note:** For register your app for OAuth, go to URL `http://<app url>/auth/github/callback` and authorize the app.
