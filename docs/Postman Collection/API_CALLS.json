@@ -1,0 +1,1539 @@
+{
+	"info": {
+		"_postman_id": "ff3a7832-1f85-4bef-92f0-b9f96623693c",
+		"name": "RDS API CALLS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17077378"
+	},
+	"item": [
+		{
+			"name": "Auctions",
+			"item": [
+				{
+					"name": "FetchAvailableAuctions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/auctions",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auctions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateNewAuction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"item_type\": \"dinero\",\r\n    \"quantity\": 50,\r\n    \"initial_price\": 5000,\r\n    \"end_time\": 1903637296536\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auctions",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auctions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAutionByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/auctions/Kk8T60TrgtUEiH3A859i",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auctions",
+								"Kk8T60TrgtUEiH3A859i"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MakeNewBid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bid\": 5500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auctions/bid/Kk8T60TrgtUEiH3A859i",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auctions",
+								"bid",
+								"Kk8T60TrgtUEiH3A859i"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Base path `/auctions`"
+		},
+		{
+			"name": "Arts",
+			"item": [
+				{
+					"name": "FetchArts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/arts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"arts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSelfArts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/arts/user/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"arts",
+								"user",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserArts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/arts/user/FsEfdxrDzqYBBWZajC8r",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"arts",
+								"user",
+								"FsEfdxrDzqYBBWZajC8r"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddArts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Ritik's Art\",\r\n    \"price\": 10,\r\n    \"css\": \"Hello World\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/arts/user/add",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"arts",
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Base path `/arts`"
+		},
+		{
+			"name": "Badges",
+			"item": [
+				{
+					"name": "GetBadges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/badges/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"badges",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBadges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ritik/Downloads/androidparty.png"
+								},
+								{
+									"key": "name",
+									"value": "\"party\"",
+									"type": "text"
+								},
+								{
+									"key": "createdBy",
+									"value": "\"Ritik\"",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "\"merimarzi\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/badges/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"badges",
+								""
+							]
+						},
+						"description": "For badges the data sent is of the form of `form data`\n\nwe need to set up cloudinary api for this route to work"
+					},
+					"response": []
+				},
+				{
+					"name": "AssignBadges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"FsEfdxrDzqYBBWZajC8r\",\r\n    \"badgeIds\": [\"FTHPjoBSEJ7qsDLYUyYi\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/badges/assign",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"badges",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveBadges",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"FsEfdxrDzqYBBWZajC8r\",\r\n    \"badgeIds\": [\"FTHPjoBSEJ7qsDLYUyYi\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/badges/remove",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"badges",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Challenges",
+			"item": [
+				{
+					"name": "FetchChallenges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/challenges",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"challenges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createChallenges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"level\": \"Noob\",\r\n    \"title\": \"test-challenge-2\",\r\n    \"start_date\": 1680625030,\r\n    \"end_date\": 1680625030\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/challenges",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"challenges"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contributions",
+			"item": [
+				{
+					"name": "GetContributions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/contributions/ritik",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"contributions",
+								"ritik"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HealthCheck",
+			"item": [
+				{
+					"name": "GetHealth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/healthcheck/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"healthcheck",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthCheckWithAuth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/healthcheck/v2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"healthcheck",
+								"v2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "GetLogsWithType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/logs/CLOUDFLARE_CACHE_PURGED",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"logs",
+								"CLOUDFLARE_CACHE_PURGED"
+							]
+						},
+						"description": "Requires an index creation so it might fail for the first time with `503`\n\nOnce the request fails go to the backend terminal and open the firebase link provided. This will start building the index.\n\nOnce the index creation is complete we can run the request again"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "GetAllMembers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/members/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"members",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MoveToMembers",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/members/moveToMembers/ritik",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"members",
+								"moveToMembers",
+								"ritik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ArchiveMembers",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/members/archiveMembers/ritik",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"members",
+								"archiveMembers",
+								"ritik"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PullRequests",
+			"item": [
+				{
+					"name": "GetOpenPullRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/pullrequests/open",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pullrequests",
+								"open"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStalePullRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/pullrequests/stale",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pullrequests",
+								"stale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserPRs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/pullrequests/user/ritik",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pullrequests",
+								"user",
+								"ritik"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stocks",
+			"item": [
+				{
+					"name": "GetStocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/stocks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"stocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewStocks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"amazon\",\r\n    \"quantity\": 50,\r\n    \"price\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/stocks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"stocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSelfStocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/stocks/user/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"stocks",
+								"user",
+								"self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "GetTasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSelfTasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"self"
+							]
+						},
+						"description": "Requires 2 index creations so it might fail few times with `500`\n\nOnce the request fails go to the backend terminal and open the firebase link provided. This will start building the index.\n\nOnce the index creation is complete we can run the request again"
+					},
+					"response": []
+				},
+				{
+					"name": "GetOverdueTasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/overdue",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"overdue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTasks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Test-task\",\r\n    \"type\":\"testing\",\r\n    \"startedOn\": 1680625030,\r\n    \"endsOn\": 1680625030,\r\n    \"priority\": \"LOW\",\r\n    \"percentCompleted\": 0,\r\n    \"category\":\"Bug\",\r\n    \"level\": 1,\r\n    \"status\": \"AVAILABLE\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"percentCompleted\":60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/9Gh5aNSyAHMdHSITeFOl",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"9Gh5aNSyAHMdHSITeFOl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTaskDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/9Gh5aNSyAHMdHSITeFOl/details",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"9Gh5aNSyAHMdHSITeFOl",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserTasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/ritik",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"ritik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelfAssignTask",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/assign/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								"assign",
+								"self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trades",
+			"item": []
+		},
+		{
+			"name": "UserStatus",
+			"item": [
+				{
+					"name": "GetAlUserStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSelfStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/FsEfdxrDzqYBBWZajC8r",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								"FsEfdxrDzqYBBWZajC8r"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAllUserStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/update",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								"update"
+							]
+						},
+						"description": "This is used to update all user status soo that their future status can be reflected  \n\nif they mark ooo for future date. this api when called will check if today is that furure date and it will mark them ooo"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentStatus\":{\r\n        \"state\": \"IDLE\",\r\n        \"updatedAt\": 123,\r\n        \"from\":1680652163,\r\n        \"message\": \"Learn Go Lang\",\r\n        \"monthlyHours\": {\r\n            \"commited\": 10,\r\n            \"updatedAt\": 1680652163\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/FsEfdxrDzqYBBWZajC8r",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								"FsEfdxrDzqYBBWZajC8r"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batchUpdateCurrentStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"users\": [\n        {\n            \"userId\": \"3kcyMhE0PyEjLrxKjLcu\",\n            \"state\": \"ACTIVE\"\n        },\n        {\n            \"userId\": \"DuMfyoqqtb8sVDAOerO3\",\n            \"state\": \"ACTIVE\"\n        },\n        {\n            \"userId\": \"JMLpZNlf5nffjLbqQNC7\",\n            \"state\": \"ACTIVE\"\n        },\n        {\n            \"userId\": \"txZFJLV40DcjsUtE0iGT\",\n            \"state\": \"IDLE\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/status/batch",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"status",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-in-discord",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/update-in-discord",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"update-in-discord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update self details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Ritik\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove ncknamesynced",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Ritik\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users//nickname-synced-field",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"",
+								"nickname-synced-field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get self user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add unverified role in discord server",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProfileDiffs",
+			"item": []
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "GetOwnWallet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/wallet",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExtensionRequests",
+			"item": []
+		},
+		{
+			"name": "Tags",
+			"item": []
+		},
+		{
+			"name": "Levels",
+			"item": []
+		},
+		{
+			"name": "Items",
+			"item": []
+		},
+		{
+			"name": "Cache",
+			"item": []
+		},
+		{
+			"name": "ExternalAccounts",
+			"item": [
+				{
+					"name": "CreateEterealAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"discord\",\n    \"token\": \"123456\",\n    \"attributes\":{\n        \"discordId\": \"123456\",\n        \"userAvatar\": \"https://res.cloudinary.com/realdevsquad/image/upload/v1683229374/profile/CvUmCEm6vB9pczLBli0O/jl5w7zkhsdujztv37voo.jpg\",\n        \"userName\":\"Ritikj1\",\n        \"discriminator\":\"1125\"\n    } \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/external-accounts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"external-accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sync discord users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/external-accounts/discord-sync",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"external-accounts",
+								"discord-sync"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Progresses",
+			"item": [
+				{
+					"name": "Get Progress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/progresses?taskId=OxYqJgf6Tyl90uci1mzs",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"progresses"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "task",
+									"disabled": true
+								},
+								{
+									"key": "taskId",
+									"value": "OxYqJgf6Tyl90uci1mzs"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save standup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"user\",\n    \"completed\": \"Testing standup\",\n    \"planned\": \"Planning test\",\n    \"blockers\": \"None\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/progresses",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"progresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "discord-actions",
+			"item": [
+				{
+					"name": "change nickname",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/discord-actions/nickname",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"discord-actions",
+								"nickname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rolename\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/discord-actions/groups",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"discord-actions",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/discord-actions/groups",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"discord-actions",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "staging",
+			"item": [
+				{
+					"name": "updateRoles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{RDS_SESSION_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"super_user\": false,\n    \"member\": true,\n    \"archived\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/staging/user",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"staging",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removePrivilages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"revoke\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/staging/users/privileges",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"staging",
+								"users",
+								"privileges"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "issues",
+			"item": [
+				{
+					"name": "Get Issues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/issues?q=add",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"issues"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "add"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
