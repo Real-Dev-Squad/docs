@@ -6,14 +6,14 @@ Welcome! This document will guide new contributors on how to get assigned with a
 
 Now that you have completed your lift simulation, you are all set to contribute to the projects. There are two ways to get assigned with a task:
 
-1. **Finding on your own:**
+1. **Get Clarification from Ankush or `Application Owner, Feature Owner`**
 
 
-   - If you find a bug or need an update, ask Ankush, Tejas, or Prakash if the task is needed.
+   - If you find a bug or need an update, ask Ankush, if the task is needed.
    - Check the channels `new-tasks` or `i-am-idle` for tasks on discord.
 
 2. **Directly Contacting Team Members:**
-   - Reach out to Ankush, Tejas, or Prakash and inquire about available tasks.
+   - Reach out to Ankush either through chat,voice chat, or morning standup at 5pm and inquire about available tasks.
    - Mention if you are looking for a task or if you have a specific area you want to work on.
    - If you're idle and don't have any specific task in mind, let the team know, and they will assign you a task.
 
@@ -23,14 +23,14 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 
 1. **Approval from Project Lead:**
 
-   - If you found a bug, need an update, or have an idea, get approval from Ankush, Tejas, or Prakash.
+   - If you found a bug, need an update, or have an idea, get approval from Ankush.
    - If you're unsure or idle, let them know you are ready for a task.
 
 2. **Create a GitHub Issue:**
 
    - If the task is not created, create a new GitHub issue with a clear title and description.
 
-3. **Add to Status Page:**
+3. **Create a TCR(Task creation request)**
 
    - Visit the [Status Page](https://status.realdevsquad.com/issues).
    - Click on the 'Issues' tab and paste the GitHub issue title, then press 'Submit'.
@@ -45,13 +45,12 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 5. **Copy Dashboard URL and Tag for Approval:**
 
    - Copy the dashboard URL.
-   - Tag Ankush, Tejas, or Prakash, requesting approval using channels `new-tasks` or `i-am-idle` on discord.
+   - Tag Ankush requesting approval using channels `new-tasks` or `i-am-idle` on discord.
 
    - And ask them to approve.
 
      ![image](https://github.com/tejaskh3/uXHUB/assets/98630752/029a562c-fe8d-48ec-a16a-1991e69d7e23)
 
-By following these steps, you are all set to work on your assigned task. If you have questions, feel free to ask in the server's respective channel.
-
+By following these steps, you are all set to work on your assigned task. If you have questions, feel free to ask in the server's respective channel.Also, if you have some specific technical doubt please ping either of Tejas and Prakash.If the doubt is regarding business logic please ping Ankush for that.
 
 Happy contributing!
