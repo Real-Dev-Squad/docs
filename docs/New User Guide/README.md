@@ -50,6 +50,7 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 
      ![image](https://github.com/tejaskh3/uXHUB/assets/98630752/029a562c-fe8d-48ec-a16a-1991e69d7e23)
 
-By following these steps, you are all set to work on your assigned task. If you have questions, feel free to ask.
+By following these steps, you are all set to work on your assigned task. If you have questions, feel free to ask in the server's respective channel.
+
 
 Happy contributing!
