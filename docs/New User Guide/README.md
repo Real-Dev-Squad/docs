@@ -4,7 +4,7 @@ Welcome! This document provides guidance for contributors on how to get assigned
 
 ## Step 1: Post Lift Simulation
 
-After completing the lift simulation, users can request a task from Ankush through the designated channel. This can be done in two ways: reporting a bug or expressing the need for an assigned task.
+After completing the lift simulation, developers can request a task from Ankush through the designated channel. This can be done in two ways: reporting a bug or expressing the need for an assigned task.
 
  **Bug Report or Task Request:**
    - If you find a bug or need a task, notify Ankush in the designated channel.
