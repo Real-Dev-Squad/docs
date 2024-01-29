@@ -45,7 +45,8 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 5. **Copy Dashboard URL and Tag for Approval:**
 
    - Copy the dashboard URL.
-   - Tag Ankush, Tejas, or Prakash, requesting approval using channels `new-tasks` or `i-am-idle` for on discord.
+   - Tag Ankush, Tejas, or Prakash, requesting approval using channels `new-tasks` or `i-am-idle` on discord.
+
    - And ask them to approve.
 
      ![image](https://github.com/tejaskh3/uXHUB/assets/98630752/029a562c-fe8d-48ec-a16a-1991e69d7e23)
