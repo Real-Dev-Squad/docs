@@ -6,7 +6,7 @@ Welcome! This document will guide new contributors on how to get assigned with a
 
 Now that you have completed your lift simulation, you are all set to contribute to the projects. There are two ways to get assigned with a task:
 
-1. **Finding on you own:**
+1. **Finding on your own:**
 
 
    - If you find a bug or need an update, ask Ankush, Tejas, or Prakash if the task is needed.
