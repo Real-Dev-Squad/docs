@@ -28,7 +28,7 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 
 2. **Create a GitHub Issue:**
 
-   - If the task is not created, [create a new GitHub issue](link_to_project_issues) with a clear title and description.
+   - If the task is not created, create a new GitHub issue with a clear title and description.
 
 3. **Add to Status Page:**
 
