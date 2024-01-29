@@ -37,7 +37,7 @@ Congratulations on completing your lift simulation! Follow these steps to choose
 4. **Request Task:**
 
    - On the Status Page, click 'Request as Task'.
-   - Set a reasonable time limit for task completion, the time you will need to get your code to production.
+   - Set a reasonable time limit for task completion, the time you will need to get your code to **production**. Once again, the time you entering here will be the time in which your code is in the **production** and ready to use(not any intermediary state).
    - After submitting, you will be redirected to a dashboard.
      ![image](https://github.com/tejaskh3/uXHUB/assets/98630752/6d4069a5-1f00-44b6-a12a-b593400b0a9d)
 
