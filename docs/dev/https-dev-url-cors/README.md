@@ -4,10 +4,13 @@ The same-origin policy is a critical security mechanism that restricts how a doc
 
 > Check out this [MDN link](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) to understand what constitutes as Same Origin
 
+Two URLs have same origin if the [protocol](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), [port](https://developer.mozilla.org/en-US/docs/Glossary/Port) and [host](https://developer.mozilla.org/en-US/docs/Glossary/Host) is same for both.
+
 We only allow `*.realdevsquad.com` to access our backend APIs via [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)
 
 When calling our APIs, our cookies are ensured to be restricted for access (Read why [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies))
-- HttpOnly 
+
+- HttpOnly
 - Secure
 
 ## Expected problem
@@ -16,24 +19,30 @@ During most frontend development, when you run a local dev server, it will run o
 
 This `localhost` server, you will **NOT** be able to use our backend APIs directly from the browser, because the cookies will not be sent by the browser according to the origins not matching because:
 
-- **http**      : Cookie is meant to be for secure `https`
+- **http** : Cookie is meant to be for secure `https`
 - **localhost** : Domain doesn't match `*.realdevsquad.com`
-- **port**      : Should be default `443` for https (or 80 for http)
+- **port** : Should be default `443` for https (or 80 for http)
 
 ## Solution
 
-If we want to make calls to our APIs beloging to *.realdevsquad.com, then we need to be originating those requests from the same origin.
+If we want to make calls to our APIs beloging to \*.realdevsquad.com, then we need to be originating those requests from the same origin.
 
-We also need to run our local development server on a url that is serving over **https** so that our prod/staging _secure_ cookies can be sent in our requests originating form the browser, automatically as expected.
+First We also need to run our local development server on a url that is serving over **https** so that our prod/staging _secure_ cookies can be sent in our requests originating form the browser, automatically as expected. To do so you can right click in vs code ans select open with live server.
 
 We basically need this kind of traffic redirection:
+
 > https://dev.realdevsquad.com -> http://localhost:`<some-port>`
 
 ### 1. 🔗 DNS
 
 We need to resolve `dev.realdevsquad.com` to `localhost`.
 
-We do that by adding the entry `127.0.0.1  dev.realdevsquad.com` to our `/etc/hosts` file on our local computer.
+We do that by adding the entry `127.0.0.1 dev.realdevsquad.com` to our `/etc/hosts` file on our local computer.
+
+To do so you can follow [this](https://www.groovypost.com/howto/edit-hosts-file-windows-10/) or [this](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/);
+
+After that you hosts file should look like this ![hosts file](public\assets\hosts.jpeg). Make sure `127.0.0.1 localhost`
+`::1 localhost` `127.0.0.1 dev.realdevsquad.com` should not be commented.
 
 Now, if you go to `dev.realdevsquad.com` on your browser, the OS will automatically resolve it to `localhost`.
 If you go to `dev.realdevsquad.com:3000`, it will point to `localhost:3000` and show you your running app. (if you have a dev server running on port 3000)
@@ -60,6 +69,5 @@ Extra: For a more powerful proxy solution, try out [mitmproxy](https://mitmproxy
 ## Final
 
 🎉 Once you get your development app to run on `https://dev.realdevsquad.com`, you will be able to access the backend APIs without any CORS issues. Happy development!
-
 
 If you want to have a single command that runs the dev server over https, check out [this package.json](https://github.com/Real-Dev-Squad/website-crypto/pull/203/)
