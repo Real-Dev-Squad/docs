@@ -1058,7 +1058,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/users/self",
+							"raw": "{{BASE_URL}}/users?profile=true",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -1124,7 +1124,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/users/self",
+							"raw": "{{BASE_URL}}/users?profile=true",
 							"host": [
 								"{{BASE_URL}}"
 							],
